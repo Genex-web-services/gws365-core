@@ -7,6 +7,7 @@ const setupModels = async() => {
 
      return {
         Log: authDB.model('Log', require('./Log')),
+        Organization: authDB.model('Organization', require('./Org')),
         Product: authDB.model('Product', require('./Product')),
         Role: authDB.model('Role', require('./Role')),
         Tenant: authDB.model('Tenant', require('./Tenant')),
