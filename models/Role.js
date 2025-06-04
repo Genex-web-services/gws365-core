@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 
 const roleSchema = new mongoose.Schema({
   name: { type: String, required: true },  // Role name like "Manager", "HR"
+  roleCode: { type: String, required: true },
   tenantId: { type: mongoose.Schema.Types.ObjectId, ref: 'Tenant', required: true },
   product_id: { type: mongoose.Schema.Types.ObjectId, ref: 'Product',type: String, required: true }, // Which product this role is for
 
