@@ -26,6 +26,7 @@ const clientSchema = new mongoose.Schema({
   // Plan details as array for multiple plans
   plans: [
     {
+      plan_id: { type: String, required: true, unique: true },
       name: { type: String, enum: ['Freemium', 'Pro', 'Business'], required: true },
       basePrice: { type: Number, default: 199 },
       includedQuota: {
