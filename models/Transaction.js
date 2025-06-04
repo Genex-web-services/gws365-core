@@ -9,6 +9,7 @@ const transitionSchema = new mongoose.Schema({
   amount: Number,
   status: { type: String, enum: ['success', 'failed', 'pending'], default: 'pending' },
   paymentMethod: String,
+  rawResponse: { type: mongoose.Schema.Types.Mixed },
   paidAt: Date,
   createdAt: { type: Date, default: Date.now }
 });
