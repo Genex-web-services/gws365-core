@@ -2,16 +2,13 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 
 const userSchema = new mongoose.Schema({
+  name: { type: String },
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
-  name: { type: String },
-
   tenantId: { type: mongoose.Schema.Types.ObjectId, ref: 'Tenant' },
-
   userType: { type: String, enum: ['single', 'org'], default: 'single' },
   isActive: { type: Boolean, default: true },
-
-  roleId: { type: mongoose.Schema.Types.ObjectId, ref: 'Role' , default: '683db81105cf2e7f18920745'  },
+  roleId: { type: String, default: 'orgAdmin'  },
   resetToken: { type: String },
     resetTokenExpiry: { type: Date },
 }, {
