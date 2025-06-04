@@ -2,8 +2,8 @@ const connectDB = require('../db');
 require('dotenv').config();
 
 const setupModels = async() => {
-    const authDB = await connectDB('auth', 'mongodb+srv://genexwebservices:Up7pmiQwuWUaCs7X@gws.mnjqqxb.mongodb.net/auth');
-    const paymentDB = await connectDB('payment', 'mongodb+srv://genexwebservices:Up7pmiQwuWUaCs7X@gws.mnjqqxb.mongodb.net/pay');
+    const authDB = await connectDB('auth', 'mongodb+srv://genexwebservices:pCcUI13H2luLFMS1@gws.mnjqqxb.mongodb.net/auth');
+    const paymentDB = await connectDB('payment', 'mongodb+srv://genexwebservices:pCcUI13H2luLFMS1@gws.mnjqqxb.mongodb.net/pay');
 
      return {
         // auth models
