@@ -5,11 +5,10 @@ const roleSchema = new mongoose.Schema({
   roleCode: { type: String, required: true },
   tenantId: { type: mongoose.Schema.Types.ObjectId, ref: 'Tenant', required: true },
   product_id: { type: mongoose.Schema.Types.ObjectId, ref: 'Product',type: String, required: true }, // Which product this role is for
-
   // Permissions granted under this role
   permissions: [String], // Array of permission `pid`s like ['add_user', 'delete_user']
-
   isDefault: { type: Boolean, default: false }, // Optional: default role for new users
+  level: { type: Number, enum: [0, 1, 2, 3], required: true,default: 3 }, // Role level, e.g., 0 for superadmin, 1 for partner,2 for org admin , 3 for user   etc.
   createdAt: { type: Date, default: Date.now }
 });
 

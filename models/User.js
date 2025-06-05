@@ -10,7 +10,8 @@ const userSchema = new mongoose.Schema({
   isActive: { type: Boolean, default: true },
   roleId: { type: String, default: 'orgAdmin'  },
   resetToken: { type: String },
-    resetTokenExpiry: { type: Date },
+  resetTokenExpiry: { type: Date },
+  referredBy: { type: mongoose.Schema.Types.ObjectId, ref: 'User' }, // referred by a user (optional)
 }, {
   timestamps: true
 });
