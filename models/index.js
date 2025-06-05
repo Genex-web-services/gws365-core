@@ -13,6 +13,7 @@ const setupModels = async() => {
         Role: authDB.model('Role', require('./Role')),
         Tenant: authDB.model('Tenant', require('./Tenant')),
         User: authDB.model('User', require('./User')),
+        Notification: authDB.model('Notification', require('./Notification')),
         
         // payment models
         Billing: paymentDB.model('Billing', require('./Billing')),
