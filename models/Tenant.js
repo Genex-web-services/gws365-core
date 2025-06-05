@@ -4,7 +4,8 @@ const tenantSchema = new mongoose.Schema({
   name: { type: String, required: true },
   createdBy: { type: mongoose.Schema.Types.ObjectId, ref: 'User' }, // Owner
   type: { type: String, enum: ['individual', 'organization'], required: true },
-  productAccess: [{ type: String }],
+productRegister: [{ type: String }],  
+productAccess: [{ type: String }],
   isActive: { type: Boolean, default: true }
 }, {
   timestamps: true
