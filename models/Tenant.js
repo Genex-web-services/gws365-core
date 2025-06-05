@@ -4,7 +4,6 @@ const tenantSchema = new mongoose.Schema({
   name: { type: String, required: true },
   createdBy: { type: mongoose.Schema.Types.ObjectId, ref: 'User' }, // Owner
   type: { type: String, enum: ['individual', 'organization'], required: true },
-productRegister: [{ type: String }],  
 productAccess: [{ type: String }],
   isActive: { type: Boolean, default: true }
 }, {
@@ -13,7 +12,7 @@ productAccess: [{ type: String }],
 
 // Pre-save hook to ensure 'admin' and 'pay' are always present in productAccess
 tenantSchema.pre('save', function (next) {
-  const requiredAccess = ['admin', 'pay'];
+  const requiredAccess = ['admincenter', 'genexpay'];
   this.productAccess = Array.from(new Set([...this.productAccess, ...requiredAccess]));
   next();
 });
