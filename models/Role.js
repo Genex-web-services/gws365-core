@@ -8,7 +8,7 @@ const roleSchema = new mongoose.Schema({
   // Permissions granted under this role
   permissions: [String], // Array of permission `pid`s like ['add_user', 'delete_user']
   isDefault: { type: Boolean, default: false }, // Optional: default role for new users
-  level: { type: Number, enum: [0, 1, 2, 3], required: true,default: 3 }, // Role level, e.g., 0 for superadmin, 1 for partner,2 for org admin , 3 for user   etc.
+  level: { type: Number, enum: [0, 1, 2, 3], required: true,default: 3 }, // Role level,   e.g., 0 for superadmin, 1 for partner,2 for org admin , 3 for user   etc.
   createdAt: { type: Date, default: Date.now }
 });
 
