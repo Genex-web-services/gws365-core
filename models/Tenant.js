@@ -6,7 +6,7 @@ const tenantSchema = new mongoose.Schema({
   type: { type: String, enum: ['individual', 'organization'], required: true },
   productAccess: [{ type: String }],
   isActive: { type: Boolean, default: true },
-  referredBy: { type: mongoose.Schema.Types.ObjectId, ref: 'User',default:'byplatform' }, // referred by a user (optional)
+  referredBy: { type: mongoose.Schema.Types.ObjectId, ref: 'User',default:'6841fb36dd9a2cc544c35a13' }, // referred by a user (optional)
 }, {
   timestamps: true
 });
