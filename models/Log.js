@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
 
 const logSchema = new mongoose.Schema({
+  tenantId: { type: mongoose.Schema.Types.ObjectId, ref: 'Tenant', required: true },
+  userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User',required:true }, // Optional
   type: { type: String, required: true }, // e.g., 'login'
   email: { type: String },
   ip: { type: String },
