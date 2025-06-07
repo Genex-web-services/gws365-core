@@ -11,6 +11,7 @@ const userSchema = new mongoose.Schema({
   roleId: { type: String, default: 'orgAdmin'  },
   resetToken: { type: String },
   resetTokenExpiry: { type: Date },
+  is_user_partner:{ type: Boolean, default: false },
   referredBy: { type: mongoose.Schema.Types.ObjectId, ref: 'User',default:'6841fb36dd9a2cc544c35a13' }, // referred by a user (optional)
 }, {
   timestamps: true
